@@ -1,0 +1,81 @@
+#**Comandos Git-Github**
+
+##/Lista de Comandos/
+
+git	-> sistema que maneja el kernel de linux. 
+$ git init	-> comienza
+$ git add	-> crea un archivo
+$ git commit	->m “Version 1”
+$ git add 	-> rinse and repeat
+$git commit -m “Cambios”	-> version correcta.
+
+##/YA EN USO/
+git init	-> da inicio a git
+git add	-> manda archivos al repositorio de git
+git commit	-> hace los cambios
+git rm	-> se encarga de borrar archivos, sin embargo estos quedan flotando en el limbo
+git rm --cache	-> esto hace que el archivo no desaparezca por error
+git config	-> muestra la configuracion de git
+git config --list	-> muestra una lista de las cosas que tenemos listas y que nos faltan
+git config --list-origin	-> lo mismo pero en repo remoto.
+git config --global	-> En todo el mundo
+
+Cuando se usa - es que se usan parametros de una letra y --cuando se usan palabras. Se deben de agregar con add cuando se hacen cambios en los archivos en reposicion.
+
+git log	-> te permite ver las versiones del commit de un archivo
+git diff	-> te permite ver las diferencias entre dos o más commits
+-m - te deja agregar un mensaje, si se usa esto con commit ya no te permite hacer commit sin mensajes. 
+
+staging	-> es el estado temporal que se crea en el directorio git cuando haces init.
+repositorio	-> es el lugar a donde mandas los archivos que estaban en staging
+tracked	-> son los archivos que estan en staging agregados por git add
+master	-> nombre de la carpeta de repositorio
+checkout 	-> puedes traerte cambios (todos o ciertos) del master a tu local. 
+branch	-> dividir los commits para poder trabajar en diferentes partes del codigo
+ramas
+git reset	-> te permite volver a una versión anterior
+git reset hard	-> vuelve al primer estado
+git reset soft	-> vuelve al estado anterior
+git reset HEAD	-> Este es el comando para sacar archivos del área de Staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con git add, por supuesto.
+
+git add . 	-> agrega todo lo que esta en la carpeta
+git log --stat 	-> te tira los cambios especificos. 
+git rm --cached	-> Elimina los archivos del área de Staging y del próximo commit pero los mantiene en nuestro disco duro.
+git rm --force	-> Elimina los archivos de Git y del disco duro. Git siempre guarda todo, por lo que podemos acceder al registro de la existencia de los archivos, de modo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados).
+git branch	-> sirve para hacer una ramificación del master
+git checkout (branch)	-> sirve para ver la ramificación en vez del master. 
+git remote add origin	-> sirve para agregar un espacio remoto
+git remote	-> muestra el github
+git remote -v	-> muestra el fetch y push.
+git push origin master	-> envia el repositorio master a tu github
+git log --all --graph --decorate  --oneline 	->te muestra un log más ajustado y más visual.
+
+Crear un nuevo tag y asignarlo a un commit	-> git tag -a nombre-del-tag id-del-commit.
+Borrar un tag en el repositorio local	-> git tag -d nombre-del-tag.
+Listar los tags de nuestro repositorio local	-> git tag o git show-ref --tags.
+Publicar un tag en el repositorio remoto	-> git push origin --tags.
+Borrar un tag del repositorio remoto	-> git tag -d nombre-del-tag y git push origin :refs/tags/nombre-del-tag.
+
+Crear una rama en el repositorio local: git branch nombre-de-la-rama o git checkout -b nombre-de-la-rama.
+Publicar una rama local al repositorio remoto	-> git push origin nombre-de-la-rama.
+git push origin branch - Crea una rama local.
+
+Fork	-> UPSTREAM es como se le pone normalmente a la nueva rama fork. 
+hacer un pull request 	-> Llamese pedir commit a alguien en el repositorio remoto.
+
+.gitignore / 	-> una blacklist con la cual ignoras archivos
+git .add .gitignore 	-> agregas a la blacklist
+
+LLAVE SSH 	-> Sirve para identificarnos en github directamente
+
+Cambios a Branch especifica:
+Cambiamos a la rama que queremos traer los cambios
+git checkout experiment
+Aplicamos rebase para traer los cambios de la rama que queremos 
+git rebase master
+
+git cherry.pick 	-> trae un commit viejo de una rama a la rama master.
+git reflog	-> muestra TODO el log
+git reset soft	-> Borra parcialmente todo.
+git reset hard	-> Borra TOTALMENTE todo. USESE CON CUIDADO.
+
